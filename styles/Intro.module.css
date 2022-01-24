@@ -38,9 +38,11 @@
   width: 100px;
   padding: 20px;
   border-radius: 10px;
+  cursor: pointer;
+  animation: button 1s ease infinite;
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 600px) {
   .container {
     flex-direction: column;
   }

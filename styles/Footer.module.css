@@ -1,0 +1,45 @@
+.container {
+  height: 250px;
+  border-top: 3px solid black;
+  display: flex;
+  justify-content: space-around;
+  font-size: 18px;
+  padding: 50px;
+  align-items: center;
+}
+
+.title {
+  font-weight: 400;
+  color: white;
+  background-color: green;
+  padding: 5px;
+  width: max-content;
+}
+
+.cardL {
+  flex: 2;
+}
+
+.cardS {
+  flex: 1;
+}
+
+.cardItem {
+  margin-bottom: 20px;
+}
+
+@media screen and (max-width: 600px) {
+  .container {
+    height: auto;
+    flex-direction: column;
+  }
+
+  .title {
+    font-size: 28px;
+  }
+
+  .cardItem {
+    text-align: center;
+    font-size: 15px;
+  }
+}

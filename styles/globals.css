@@ -23,3 +23,9 @@ a {
   z-index: 999;
   opacity: 0.1;
 }
+
+@media screen and (max-width: 600px) {
+  .circle {
+    display: none;
+  }
+}
