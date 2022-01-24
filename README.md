@@ -35,7 +35,7 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 
 ## Roadmap
 
-- create new project [x]
+- create new project :white_check_mark:
 - prototype navbar [x]
 - prototype landing page [x]
 - prototype footer [x]
