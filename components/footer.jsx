@@ -18,7 +18,7 @@ const Footer = ()=>{
                     FOLLOW US: <br/> _FB _IN _BE _TW
                 </div>
                 <div className={styles.cardItem}>
-                   COPYRIGHT AND DEVELOPED BY PANHCHANA @PISEY2022 <br/> ALL RIGHTS RESERVED
+                    DEVELOPED AND COPYRIGHT BY PANHCHANA @PISEY2022 <br/> ALL RIGHTS RESERVED
                 </div>
             </div>
         </div>
