@@ -147,3 +147,31 @@ To make responsive page, first go to CSS code then:
     ```
 
     * supabase reference https://supabase.com/docs/reference/javascript/select
+- add tailwindcss to our project(exiting project)
+    * install tailwindcss postcss autoprefixer
+    ```
+    npm install -D tailwindcss postcss autoprefixer
+    ```
+    * config init
+    ```
+    npx tailwindcss init -p
+    ```
+    * Configure your template paths (Add the paths to all of your template files in your tailwind.config.js file.)
+    ```
+    module.exports = {
+    content: [
+        "./pages/**/*.{js,ts,jsx,tsx}",
+        "./components/**/*.{js,ts,jsx,tsx}",
+    ],
+    theme: {
+        extend: {},
+    },
+    plugins: [],
+        }
+    ```
+    * Add the Tailwind directives to your CSS (Add the @tailwind directives for each of Tailwind’s layers to your ./styles/globals.css file.)
+    ```
+    @tailwind base;
+    @tailwind components;
+    @tailwind utilities;
+    ```

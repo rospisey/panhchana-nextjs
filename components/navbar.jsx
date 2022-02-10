@@ -4,10 +4,10 @@ import { useState } from "react";
 function Navbar() {
   const [open,setOpen]= useState(false)
   return (
-    <div className={styles.container}>
+    <div className="bg-black h-50px text-white flex items-center justify-between overflow-hidden relative">
       <Link href="/">Panhchana</Link>
-      <ul className={styles.list}>
-        <li className={styles.listItem}>
+      <ul className="">
+        <li className="m-5">
           <Link href="/">Home</Link>
         </li>
         <li className={styles.listItem}>
