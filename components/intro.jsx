@@ -18,8 +18,8 @@ const Intro = () => {
     //   </div>
     // </div>
 
-    <div className="flex flex-col md:flex-row ">
-        <div className="w-1/2 p-24 h-[calc(100vh-50px)] flex-none md:flex-1 justify-between relative">
+    <div className="relative flex flex-col md:flex-row">
+        <div className="w-1/2 p-24 h-[calc(100vh-50px)] flex-none md:flex-1 justify-between relative overflow-hidden">
             <h1 className={styles.title}>
         <span className="text-green-500">PANHCHANA</span> WEB DEVELOPMENT
        </h1>
