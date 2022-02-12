@@ -1,12 +1,14 @@
 import Footer from "./footer"
+import Header1 from "./header"
 import Example from "./header"
-import Navbar from "./navbar"
+import Header2 from "./header2"
+
 
 const Layout =({children})=>{
     return (
         <div>
-            {/* <Navbar/> */}
-            <Example/>
+            <Header2/>
+            {/* <Example/> */}
             {children}
             <Footer/>
         </div>
