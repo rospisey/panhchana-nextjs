@@ -43,3 +43,135 @@ To make responsive page, first go to CSS code then:
 - responsive landing page :white_check_mark:
 - responsive navbar :white_check_mark:
 - resonsive footer :white_check_mark:
+- connect to supabase
+    * create new file ".env.local"
+    * add API url and key from your project
+    ```
+    NEXT_PUBLIC_SUPABASE_URL=YOUR_SUPABASE_URL
+    NEXT_PUBLIC_SUPABASE_ANON_KEY=YOUR_SUPABASE_ANON_KEY
+    ```
+    * install supabase dependency
+    ```
+    npm install @supabase/supabase-js
+    ```
+    * create new file: utils/supabaseClient.js
+    * connect to supabase in supabaseClient.js
+    ```
+    import { createClient } from '@supabase/supabase-js'
+
+    const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL
+    const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
+
+    export const supabase = createClient(supabaseUrl, supabaseAnonKey)
+    ```
+    * read single data(read from client)
+    ```
+    import { supabase } from '../utils/supabaseClient'
+    ......
+    const [username, setUsername] = useState(null)
+    const [website, setWebsite] = useState(null)
+    const [avatar_url, setAvatarUrl] = useState(null)
+
+    useEffect(() => {
+    getData()
+        }, [])
+
+    async function getData() {
+    try{
+      let { data, error, status } = await supabase
+          .from('profiles')
+          .select(`username, website, avatar_url`)
+          .single()
+      if (error && status !== 406) {
+          throw error
+        }
+      if (data) {
+          setUsername(data.username)
+          setWebsite(data.website)
+          setAvatarUrl(data.avatar_url)
+        }
+      } catch (error){
+          alert(error.message)
+      }
+    }
+
+    return (
+    .....
+      <p>{username}</p>
+      <p>{website}</p>
+      <p>{avatar_url}</p>
+    .....
+    )
+    ......
+    ```
+    * read list of data (read from client)
+    ```
+    ......
+    const [data, setData] = useState([])
+
+  useEffect(() => {
+    getData()
+  }, [])
+
+  async function getData() {
+    try{
+      let { data: datas, error, status } = await supabase
+          .from('profiles')
+          .select(`username, website, avatar_url`)
+          
+      if (error && status !== 406) {
+          throw error
+        }
+      if (data) {
+          setData(datas)
+        }
+      } catch (error){
+          alert(error.message)
+      }
+  }
+  .....
+  return(
+      ......
+      <div>
+            <h1>TODO List</h1>
+            <ul>
+                {data.map( d =>
+                    <li key={d.id}>
+                        {d.website} 
+                    </li>
+                )}
+            </ul>
+        </div>
+      ......
+  )
+    ```
+
+    * supabase reference https://supabase.com/docs/reference/javascript/select
+- add tailwindcss to our project(exiting project)
+    * install tailwindcss postcss autoprefixer
+    ```
+    npm install -D tailwindcss postcss autoprefixer
+    ```
+    * config init
+    ```
+    npx tailwindcss init -p
+    ```
+    * Configure your template paths (Add the paths to all of your template files in your tailwind.config.js file.)
+    ```
+    module.exports = {
+    content: [
+        "./pages/**/*.{js,ts,jsx,tsx}",
+        "./components/**/*.{js,ts,jsx,tsx}",
+    ],
+    theme: {
+        extend: {},
+    },
+    plugins: [],
+        }
+    ```
+    * Add the Tailwind directives to your CSS (Add the @tailwind directives for each of Tailwind’s layers to your ./styles/globals.css file.)
+    ```
+    @tailwind base;
+    @tailwind components;
+    @tailwind utilities;
+    ```
