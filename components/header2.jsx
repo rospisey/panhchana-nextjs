@@ -6,16 +6,19 @@ import { Transition } from "@headlessui/react";
 function Header2() {
     const [isOpen, setIsOpen] = useState(false)
     return (
-        <div className=" bg-white fixed z-50 w-screen border-b-2 border-gray-100">
-            <div className=" max-w-7xl mx-auto px-4 sm:px-6 ">
+        <div className=" bg-white bg-clip-padding backdrop-blur-md bg-opacity-50 fixed z-50 w-screen border-b-[1px] border-gray-200">
+            <div className=" max-w-7xl mx-auto px-4 sm:px-12 ">
                 <div className="flex justify-between items-center  py-6 md:justify-start md:space-x-10">
                     {/* logo */}
                     <div className="flex justify-start lg:flex-1">
-                        <img
+                        {/* <img
                             className="h-8 w-auto"
                             src="https://tailwindui.com/img/logos/workflow-mark-indigo-600.svg"
                             alt="Workflow"
-                        />
+                        /> */}
+                        <svg xmlns="http://www.w3.org/2000/svg" width="143.5" height="40.807" viewBox="0 0 143.5 40.807">
+                            <path id="Path_118" data-name="Path 118" d="M83.847,28.913v4.079l-.254.147-3.279,1.893-2.84,1.641-.7.4-3.533,2.04-1.9,1.095-1.636.945-3.536,2.04v0l-.948.546-2.586,1.494h0l-3.531,2.04-3.536,2.04v0l2.591,1.494.945.546.945-.546,2.588-1.494v0l3.533-2.037v0h0l3.533-2.04L72.3,43.742l.948-.546,3.533-2.04v0l1.638-.945,1.9-1.095,3.533-2.04v4.079l-3.533,2.04v0l-.95.546-2.586,1.494-3.533,2.04-3.533,2.04v0h0L67.12,50.811l-.945.544v0L62.641,53.4l1.641.948,1.893,1.092v0h0l1.9-1.095,1.638-.948,3.533-2.04.948-.546,2.586-1.494h0l3.533-2.04v0h0l3.531-2.04V69.72L81.7,68.481l-1.384-.8v0l-3.536-2.04-1.2-.693L73.244,63.6l-3.533-2.04v0l.254-.147,3.279-1.893,3.279,1.893.254.147h0l3.531,2.04h0V51.357L76.777,53.4l-1.641.948-1.893,1.092-3.533,2.04v0h0l-.693.4-2.84,1.641-2.843-1.641-.691-.4-3.533-2.04v0h0l-1.893-1.092L55.572,53.4l-3.533-2.04-.945-.546-2.588-1.494v0l3.531-2.04h0l3.531-2.04h0l2.586-1.494.945-.546h0l3.533-2.042,1.638-.945,1.9-1.095,3.536-2.04.693-.4,2.84-1.638,3.282-1.9.252-.147h0l3.533-2.04,2.331-1.347Z" transform="translate(-48.505 -28.913)" fill="#161615" />
+                        </svg>
                     </div>
                     {/* primary nav */}
                     <nav className="hidden  justify-center  md:flex">
@@ -53,32 +56,32 @@ function Header2() {
                     </div>
 
                 </div>
-                
+
             </div>
             <Transition show={isOpen} enter="transition ease-out duration-100 transform" enterFrom="opacity-0 scale-95" enterTo="opacity-100 scale-100" leave="transition ease-in duration-75 transform" leaveFrom="opacity-100 scale-100" leaveTo="opacity-0 scale-95">{(ref) =>
-                // handle mobile menu
-                (
-                    <div className="md:hidden w-full bottom-0 top-[88px] bg-white block z-50 id=mobile-menu fixed overflow-y-scroll visible">
-                        <div ref={ref} className="bg-white px-2 pt-2 pb-3 space-y-1 sm:px-3">
-                            <Link href="/home" activeClass="home" to="home" smooth={true} offset={50} duration={500} className="cursor-pointer hover:bg-blue-600 text-black hover:text-white block px-3 py-2 rounded-md text-base font-medium">
-                                Home
-                            </Link>
-                            <Link href="/blog" activeClass="blog" to="blog" smooth={true} offset={50} duration={500} className="cursor-pointer hover:bg-blue-600 text-black hover:text-white block px-3 py-2 rounded-md text-base font-medium">
-                                About
-                            </Link>
-                            <Link href="/services" activeClass="services" to="services" smooth={true} offset={50} duration={500} className="cursor-pointer hover:bg-blue-600 text-black hover:text-white block px-3 py-2 rounded-md text-base font-medium">
-                                Services
-                            </Link>
-                            <Link href="/about" activeClass="about" to="about" smooth={true} offset={50} duration={500} className="cursor-pointer hover:bg-blue-600 text-black hover:text-white block px-3 py-2 rounded-md text-base font-medium">
-                                About
-                            </Link>
-                            <Link href="/contact" activeClass="contact" to="contact" smooth={true} offset={50} duration={500} className="cursor-pointer hover:bg-blue-600 text-black hover:text-white block px-3 py-2 rounded-md text-base font-medium">
-                                Contact
-                            </Link>
-                            
-                        </div>
+            // handle mobile menu
+            (
+                <div className="md:hidden w-full bottom-0 top-[88px] bg-white block z-50 id=mobile-menu fixed overflow-y-scroll visible">
+                    <div ref={ref} className="bg-white px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                        <Link href="/home" activeClass="home" to="home" smooth={true} offset={50} duration={500} className="cursor-pointer hover:bg-blue-600 text-black hover:text-white block px-3 py-2 rounded-md text-base font-medium">
+                            Home
+                        </Link>
+                        <Link href="/blog" activeClass="blog" to="blog" smooth={true} offset={50} duration={500} className="cursor-pointer hover:bg-blue-600 text-black hover:text-white block px-3 py-2 rounded-md text-base font-medium">
+                            About
+                        </Link>
+                        <Link href="/services" activeClass="services" to="services" smooth={true} offset={50} duration={500} className="cursor-pointer hover:bg-blue-600 text-black hover:text-white block px-3 py-2 rounded-md text-base font-medium">
+                            Services
+                        </Link>
+                        <Link href="/about" activeClass="about" to="about" smooth={true} offset={50} duration={500} className="cursor-pointer hover:bg-blue-600 text-black hover:text-white block px-3 py-2 rounded-md text-base font-medium">
+                            About
+                        </Link>
+                        <Link href="/contact" activeClass="contact" to="contact" smooth={true} offset={50} duration={500} className="cursor-pointer hover:bg-blue-600 text-black hover:text-white block px-3 py-2 rounded-md text-base font-medium">
+                            Contact
+                        </Link>
+
                     </div>
-                )}</Transition>
+                </div>
+            )}</Transition>
         </div>
     );
 }

@@ -1,7 +1,7 @@
 import styles from "../styles/Footer.module.css"
-const Footer = ()=>{
+const Footer = () => {
     return (
-        
+
         <div className=" mx-auto container xl:px-20 lg:px-12 sm:px-6 px-4 py-12">
             <div className="flex flex-col items-center justify-center">
                 <div>
@@ -47,9 +47,9 @@ const Footer = ()=>{
                     <div className="border-l border-gray-800 pl-2 ml-2">
                         <p className="text-base leading-4 text-gray-800 dark:text-gray-400">Inc. All rights reserved</p>
                     </div>
+                </div>
             </div>
         </div>
-    
     )
 }
 
