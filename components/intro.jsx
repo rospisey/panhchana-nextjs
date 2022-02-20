@@ -23,7 +23,7 @@ const Intro = () => {
             <h1 className={styles.title}>
         <span className="text-green-500">PANHCHANA</span> WEB DEVELOPMENT
        </h1>
-        <p className="text-xl">Develop your ideas to the world by our professional</p>
+        <p className="text-xl">Develop your ideas to the world by our</p>
          <button className="bg-transparent hover:bg-indigo-500 hover:text-white py-2 px-4 my-3 border border-blue-500 hover:border-transparent rounded">DISCOVER</button>
         </div>
         <div className="w-1/2 h-[calc(100vh-50px)] p-24 flex-1 justify-between relative" >
